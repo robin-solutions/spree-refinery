@@ -44,6 +44,9 @@ module SpreefineryModern
     #   @@frontend_available ||= ::Rails::Engine.subclasses.map(&:instance).map{ |e| e.class.to_s }.include?('Spree::Frontend::Engine')
     # end
 
+    paths['app/controllers'] << 'frontend' << 'backend'
+    paths['app/views'] << 'frontend' << 'backend'
+
     config.to_prepare &method(:activate).to_proc
   end
 end
