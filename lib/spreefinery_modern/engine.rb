@@ -1,4 +1,4 @@
-require 'spree/authentication_helpers'
+require 'spree/authentication_helper'
 
 module SpreefineryModern
   class Engine < ::Rails::Engine
