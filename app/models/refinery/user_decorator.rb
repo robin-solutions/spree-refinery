@@ -1,11 +1,21 @@
-Refinery::User.class_eval do
-  before_validation :copy_username_from_email
 
-  protected
+
+Refinery::User.class_eval do
+  class DestroyWithOrdersError < StandardError; end
+
+  include Spree::UserAddress
+  include Spree::UserPaymentSource
+
+  before_validation :copy_username_from_email
+  before_destroy :check_completed_orders
+
+  private
 
     def copy_username_from_email
-      if self.username.blank? && self.email.present?
-        self.username = self.email
-      end
+      self.username ||= self.email if self.email
+    end
+
+    def check_completed_orders
+      raise DestroyWithOrdersError if orders.complete.present?
     end
 end
