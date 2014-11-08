@@ -44,12 +44,8 @@ module SpreefineryModern
     #   @@frontend_available ||= ::Rails::Engine.subclasses.map(&:instance).map{ |e| e.class.to_s }.include?('Spree::Frontend::Engine')
     # end
 
-    paths['app/controllers'] << 'app/controllers/frontend' 
-    paths['app/controllers'] << 'app/controllers/backend'
-    paths['app/views'] << 'app/views/frontend'
-    paths['app/views'] << 'app/views/backend'
-
-    puts "Controllers: #{paths['app/controllers']}\nViews: #{paths['app/views']}"
+    paths['app/controllers'] << 'app/controllers/frontend' << 'app/controllers/backend'
+    paths['app/views'] << 'app/views/frontend' << 'app/views/backend'
 
     config.to_prepare &method(:activate).to_proc
   end
