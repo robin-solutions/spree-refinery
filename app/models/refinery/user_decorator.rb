@@ -11,6 +11,10 @@ Refinery::User.class_eval do
 
   has_many :orders, class_name: 'Spree::Order'
 
+  def store_admin?
+    has_spree_role?('admin')
+  end
+
   private
 
     def copy_username_from_email

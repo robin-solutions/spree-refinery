@@ -12,7 +12,7 @@ class Spree::UserRegistrationsController < Devise::RegistrationsController
   include Spree::Core::ControllerHelpers::Store
   # Want to default to refinery authentication messages
   include Refinery::AuthenticatedSystem
-
+  include AfterSignInRedirect
 
   ssl_required
   before_filter :check_permissions, :only => [:edit, :update]
