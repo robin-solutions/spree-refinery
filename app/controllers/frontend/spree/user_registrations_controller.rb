@@ -32,9 +32,7 @@ class Spree::UserRegistrationsController < Devise::RegistrationsController
       sign_in(:refinery_user, @user)
       session[:spree_user_signup] = true
       associate_user
-      binding.pry
-      location = after_sign_up_path_for(resource) || root_path
-      respond_with resource, location: location
+      respond_with resource, location: after_sign_up_path_for(resource)
     else
       clean_up_passwords(resource)
       render :new

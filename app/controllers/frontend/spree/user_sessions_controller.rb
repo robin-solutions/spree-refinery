@@ -13,7 +13,7 @@ class Spree::UserSessionsController < Devise::SessionsController
   # Want to default to refinery authentication messages
   include Refinery::AuthenticatedSystem
   include AfterSignInRedirect
-  
+
   ssl_required :new, :create, :destroy, :update
   ssl_allowed :login_bar
 
