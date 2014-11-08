@@ -67,6 +67,6 @@ class Spree::UserRegistrationsController < Devise::RegistrationsController
 
   private
     def spree_user_params
-      params.require(:spree_user).permit(Spree::PermittedAttributes.user_attributes)
+      params.require(:refinery_user).permit(Spree::PermittedAttributes.user_attributes)
     end
 end
