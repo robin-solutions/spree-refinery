@@ -9,6 +9,7 @@ class Spree::UserSessionsController < Devise::SessionsController
   include Spree::Core::ControllerHelpers::Order
   include Spree::Core::ControllerHelpers::SSL
   include Spree::Core::ControllerHelpers::Store
+
   # Want to default to refinery authentication messages
   include Refinery::AuthenticatedSystem
 
