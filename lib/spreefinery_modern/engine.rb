@@ -1,5 +1,3 @@
-require 'spree/authentication_helper'
-
 module SpreefineryModern
   class Engine < ::Rails::Engine
     engine_name 'spreefinery_modern'
