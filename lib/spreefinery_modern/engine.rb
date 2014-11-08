@@ -49,7 +49,7 @@ module SpreefineryModern
     paths['app/views'] << 'app/views/frontend'
     paths['app/views'] << 'app/views/backend'
 
-    Rails.logger.debug "Controllers: #{paths['app/controllers']}\nViews: #{paths['app/views']}"
+    puts "Controllers: #{paths['app/controllers']}\nViews: #{paths['app/views']}"
 
     config.to_prepare &method(:activate).to_proc
   end
