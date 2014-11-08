@@ -9,6 +9,8 @@ class Spree::UserSessionsController < Devise::SessionsController
   include Spree::Core::ControllerHelpers::Order
   include Spree::Core::ControllerHelpers::SSL
   include Spree::Core::ControllerHelpers::Store
+  # Want to default to refinery authentication messages
+  include Refinery::AuthenticatedSystem
 
   ssl_required :new, :create, :destroy, :update
   ssl_allowed :login_bar
@@ -46,8 +48,8 @@ class Spree::UserSessionsController < Devise::SessionsController
       Spree.t(:login)
     end
 
-    def redirect_back_or_default(default)
-      redirect_to(session["spree_user_return_to"] || default)
-      session["spree_user_return_to"] = nil
-    end
+    # def redirect_back_or_default(default)
+    #   redirect_to(session["spree_user_return_to"] || default)
+    #   session["spree_user_return_to"] = nil
+    # end
 end

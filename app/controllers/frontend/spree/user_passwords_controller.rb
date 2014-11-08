@@ -10,6 +10,8 @@ class Spree::UserPasswordsController < Devise::PasswordsController
   include Spree::Core::ControllerHelpers::Order
   include Spree::Core::ControllerHelpers::SSL
   include Spree::Core::ControllerHelpers::Store
+  # Want to default to refinery authentication messages
+  include Refinery::AuthenticatedSystem
 
   ssl_required
 
