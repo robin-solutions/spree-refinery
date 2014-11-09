@@ -1,7 +1,7 @@
 class Spree::UserConfirmationsController < Devise::ConfirmationsController
   helper 'spree/base', 'spree/store'
 
-  if SpreefineryModern::Engine.dash_available?
+  if RefinerySpree::Engine.dash_available?
     helper 'spree/analytics'
   end
 

@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :spreefinery_modern do
+# task :refinery_spree do
 #   # Task goes here
 # end

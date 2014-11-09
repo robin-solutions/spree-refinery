@@ -36,7 +36,7 @@ Spree::CheckoutController.class_eval do
 
     # Introduces a registration step whenever the +registration_step+ preference is true.
     def check_registration
-      return unless SpreefineryModern::Config[:registration_step]
+      return unless RefinerySpree::Config[:registration_step]
       return if spree_current_user or current_order.email
       store_location
       redirect_to spree.checkout_registration_path

@@ -1,3 +1,3 @@
-# SpreefineryModern
+# Refinery-Spree
 
-This project rocks and uses MIT-LICENSE.
+Refinery 3 and Spree 2.4 authentication integration. 
