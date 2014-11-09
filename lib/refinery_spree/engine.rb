@@ -1,12 +1,12 @@
 module RefinerySpree
   class Engine < ::Rails::Engine
-    engine_name 'refinery_spree'
+    engine_name 'refinery-spree'
 
-    initializer "refinery_spree.environment", :before => :load_config_initializers do |app|
+    initializer "refinery-spree.environment", :before => :load_config_initializers do |app|
       RefinerySpree::Config = Spree::AuthConfiguration.new
     end
 
-    initializer "refinery_spree_modern.set_user_class", :before => :load_config_initializers do
+    initializer "refinery-spree_modern.set_user_class", :before => :load_config_initializers do
       Spree.user_class = "Refinery::User"
     end
 
