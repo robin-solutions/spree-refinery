@@ -1,0 +1,9 @@
+en:
+  refinery:
+    admin:
+      users:
+        form:
+          spree_role_access: Spree role access
+    spree_roles:
+      admin: Admin
+      user: User
